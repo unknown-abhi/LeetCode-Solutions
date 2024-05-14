@@ -21,7 +21,6 @@ class Solution {
             carry = sum/10;
             tempHead.next = new ListNode(sum%10);
             tempHead = tempHead.next;
-            System.out.println(tempHead.val);
             if(l1 != null) l1 = l1.next;
             if(l2 != null) l2 = l2.next;
         }
