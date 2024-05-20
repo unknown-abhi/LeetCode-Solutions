@@ -1,5 +1,3 @@
-import java.util.Vector;
-
 class Solution {
     public void rotate(int[] nums, int k) {
         int arrSize = nums.length;
