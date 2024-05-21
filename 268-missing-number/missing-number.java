@@ -9,6 +9,6 @@ class Solution {
             }
             size--;
         }
-        return 0;
+        return size;
     }
 }
