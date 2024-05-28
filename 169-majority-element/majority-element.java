@@ -1,6 +1,6 @@
 class Solution {
     public int majorityElement(int[] nums) {
-           Map<Integer, Integer> ele = new HashMap<>();
+        Map<Integer, Integer> ele = new HashMap<>();
         int n = nums.length;
         for (int i = 0; i < n; i++) {
             if (ele.containsKey(nums[i])) {
