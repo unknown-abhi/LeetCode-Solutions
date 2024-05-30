@@ -1,10 +1,9 @@
 class Solution {
     public int maxSubArray(int[] nums) {
         
-        int n = nums.length;
         int sum = 0, maxSum = Integer.MIN_VALUE;
         int i = 0;
-        while (i < n) {
+        while (i < nums.length) {
             sum += nums[i];
              if (sum > maxSum) {
                 maxSum = sum;
