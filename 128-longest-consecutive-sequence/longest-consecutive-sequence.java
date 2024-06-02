@@ -4,24 +4,27 @@ class Solution {
         if (size == 0) {
             return 0;
         }
-
-        Arrays.sort(nums);
-
-        int count = 0;
         int longest = 1;
-        int lastLow = Integer.MIN_VALUE;
 
+        Set<Integer> arr = new HashSet<>();
         for (int i = 0; i < size; i++) {
-            if (nums[i] - 1 == lastLow) {
-                count++;
-                lastLow = nums[i];
-            } else if (lastLow != nums[i]) {
-                count = 1;
-                lastLow = nums[i];
+            arr.add(nums[i]);
+        }
+
+        Iterator<Integer> value = arr.iterator();
+
+        while (value.hasNext()) {
+            int curr = value.next();
+            int count = 1;
+            while (!arr.contains(curr - 1)) {
+                if (arr.contains(curr + count)) {
+                    count++;
+                } else {
+                    break;
+                }
             }
-            longest = Math.max(count, longest);
+            longest = Math.max(longest, count);
         }
         return longest;
-
     }
 }
