@@ -15,6 +15,6 @@ class Solution {
             }
         }
 
-        return (count > 0) ? candidate : 0;
+        return candidate;
     }
 }
