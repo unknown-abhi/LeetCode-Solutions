@@ -3,18 +3,19 @@ class Solution {
 
         HashMap<Integer, Integer> mp = new HashMap<>();
         int size = nums.length;
+
+        Set<Integer> temp = new HashSet<>();
+        int nBy3 = size / 3;
+
         for (int i = 0; i < size; i++) {
             mp.put(nums[i], mp.getOrDefault(nums[i], 0) + 1);
-        }
 
-        ArrayList<Integer> ans = new ArrayList<>();
-        int nBy3 = size / 3;
-        for (Map.Entry<Integer, Integer> entry : mp.entrySet()) {
-            if (entry.getValue() > nBy3) {
-                ans.add(entry.getKey());
+            if (mp.get(nums[i]) > nBy3) {
+                temp.add(nums[i]);
             }
         }
 
+        ArrayList<Integer> ans = new ArrayList<>(temp);
         return ans;
     }
 }
