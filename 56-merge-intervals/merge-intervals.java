@@ -19,14 +19,7 @@ class Solution {
                 list.get(list.size() - 1).set(1, Math.max(list.get(list.size() - 1).get(1), end));
                 continue;
             }
-
-            // for (int j = i + 1; j < n; j++) {
-            //     if (intervals[j][0] <= end) {
-            //         end = Math.max(end, intervals[j][1]);
-            //     } else {
-            //         break;
-            //     }
-            // }
+            
             list.add(Arrays.asList(start, end));
         }
 
