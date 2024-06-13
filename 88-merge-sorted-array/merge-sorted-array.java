@@ -7,31 +7,31 @@ class Solution {
 
         int left = 0;
         int right = 0;
-        int flag = 0;
+        int index = 0;
 
         while (left < m && right < n) {
             if (nums1[left] <= nums2[right]) {
-                ans[flag] = nums1[left];
+                ans[index] = nums1[left];
                 left++;
-                flag++;
+                index++;
             } else {
                 if (right < n) {
-                    ans[flag] = nums2[right];
+                    ans[index] = nums2[right];
                     right++;
-                    flag++;
+                    index++;
                 }
             }
         }
 
         while (left < m) {
-            ans[flag] = nums1[left];
+            ans[index] = nums1[left];
             left++;
-            flag++;
+            index++;
         }
         while (right < n) {
-            ans[flag] = nums2[right];
+            ans[index] = nums2[right];
             right++;
-            flag++;
+            index++;
         }
 
         for (int i = 0; i < m + n; i++) {
