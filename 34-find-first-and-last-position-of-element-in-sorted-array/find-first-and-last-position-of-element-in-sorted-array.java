@@ -41,8 +41,6 @@ class Solution {
 
     public int[] searchRange(int[] nums, int target) {
 
-        int ans = lowerBound(nums, target);
-
-        return new int[] { ans, upperBound(nums, target)};
+        return new int[] { lowerBound(nums, target), upperBound(nums, target)};
     }
 }
