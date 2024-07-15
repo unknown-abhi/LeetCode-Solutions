@@ -28,20 +28,19 @@ class Solution {
         int low = Arrays.stream(weights).max().getAsInt();
         int high = Arrays.stream(weights).sum();
 
-        int ans = -1;
+        // int ans = -1;
 
         while (low <= high) {
             int mid = (low + high) / 2;
 
             if (minCapacity(weights, days, mid)) {
-                ans = mid;
+                // ans = mid;
                 high = mid - 1;
             } else {
-                // ans = mid;
                 low = mid + 1;
             }
         }
 
-        return ans;
+        return low;
     }
 }
