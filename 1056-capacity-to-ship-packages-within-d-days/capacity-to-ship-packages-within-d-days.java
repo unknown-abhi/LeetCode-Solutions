@@ -1,24 +1,31 @@
 class Solution {
     public boolean minCapacity(int[] weights, int days, int minWeight) {
 
-        int noOfDays = 0;
-        int count = 0;
+        int noOfDays = 1;
+        int load = 0;
 
         for (int i = 0; i < weights.length; i++) {
-            count += weights[i];
+            // load += weights[i];
 
-            if (count == minWeight) {
+            // if (count == minWeight) {
+            // noOfDays++;
+            // load = 0;
+            // } else if (count > minWeight) {
+            // noOfDays++;
+            // load = weights[i];
+            // }
+
+            if (load + weights[i] > minWeight) {
                 noOfDays++;
-                count = 0;
-            } else if (count > minWeight) {
-                noOfDays++;
-                count = weights[i];
+                load = weights[i];
+            } else {
+                load += weights[i];
             }
         }
 
-        if (count < minWeight && count != 0) {
-            noOfDays++;
-        }
+        // if (load < minWeight && load != 0) {
+        // noOfDays++;
+        // }
 
         return noOfDays <= days;
     }
