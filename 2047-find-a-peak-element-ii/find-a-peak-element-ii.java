@@ -16,9 +16,9 @@ class Solution {
 
     public int[] findPeakGrid(int[][] mat) {
 
-        int rowSize = mat[0].length;
+        int colCount = mat[0].length;
         int low = 0;
-        int high = rowSize - 1;
+        int high = colCount - 1;
 
         while (low <= high) {
             int mid = (low + high) / 2;
@@ -26,7 +26,7 @@ class Solution {
             int maxRow = findMaxRow(mat, mid);
 
             int left = (mid - 1 >= 0) ? mat[maxRow][mid - 1] : -1;
-            int right = (mid + 1 < rowSize) ? mat[maxRow][mid + 1] : -1;
+            int right = (mid + 1 < colCount) ? mat[maxRow][mid + 1] : -1;
 
             if (mat[maxRow][mid] > left && mat[maxRow][mid] > right) {
                 return new int[] { maxRow, mid };
