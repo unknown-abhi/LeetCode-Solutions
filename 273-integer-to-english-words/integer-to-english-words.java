@@ -20,7 +20,8 @@ class Solution {
                             : "");
         } else {
             return integerToEnglish(num / 1000000000, belowTen, belowTwenty, belowHundred) + " Billion"
-                    + (num % 1000000000 != 0 ? " " + integerToEnglish(num % 1000000000, belowTen, belowTwenty, belowHundred)
+                    + (num % 1000000000 != 0
+                            ? " " + integerToEnglish(num % 1000000000, belowTen, belowTwenty, belowHundred)
                             : "");
         }
     }
