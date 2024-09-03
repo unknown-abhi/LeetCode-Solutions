@@ -3,14 +3,14 @@ class Solution {
 
         Arrays.sort(strs);
 
-        String shortest = strs[0];
-        String longest = strs[strs.length - 1];
+        char[] shortest = strs[0].toCharArray();
+        char[] longest = strs[strs.length - 1].toCharArray();
 
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < shortest.length(); i++) {
-            if (shortest.charAt(i) == longest.charAt(i)) {
-                sb.append(shortest.charAt(i));
-            }else{
+        for (int i = 0; i < shortest.length; i++) {
+            if (shortest[i] == longest[i]) {
+                sb.append(shortest[i]);
+            } else {
                 break;
             }
         }
