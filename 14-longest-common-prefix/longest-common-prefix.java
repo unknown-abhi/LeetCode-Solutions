@@ -10,7 +10,7 @@ class Solution {
         for (int i = 0; i < shortest.length(); i++) {
             if (shortest.charAt(i) == longest.charAt(i)) {
                 sb.append(shortest.charAt(i));
-            } else {
+            }else{
                 break;
             }
         }
