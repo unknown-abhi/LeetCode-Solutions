@@ -3,20 +3,24 @@ class Solution {
         if (s.length() != goal.length()) {
             return false;
         }
-        StringBuffer sb = new StringBuffer(s);
+        // Optimal Solution
+        return (s + s).contains(goal);
 
-        int len = s.length();
+        //Better Solution
+        // StringBuffer sb = new StringBuffer(s);
 
-        while (len > 0) {
-            char tmp = sb.charAt(0);
-            sb.deleteCharAt(0);
-            sb.append(tmp);
+        // int len = s.length();
 
-            if (sb.toString().equals(goal)) {
-                return true;
-            }
-            len--;
-        }
-        return false;
+        // while (len > 0) {
+        //     char tmp = sb.charAt(0);
+        //     sb.deleteCharAt(0);
+        //     sb.append(tmp);
+
+        //     if (sb.toString().equals(goal)) {
+        //         return true;
+        //     }
+        //     len--;
+        // }
+        // return false;
     }
 }
