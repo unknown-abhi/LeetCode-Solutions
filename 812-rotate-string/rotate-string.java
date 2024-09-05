@@ -6,20 +6,20 @@ class Solution {
         // Optimal Solution
         return (s + s).contains(goal);
 
-        //Better Solution
+        // Better Solution
         // StringBuffer sb = new StringBuffer(s);
 
         // int len = s.length();
 
         // while (len > 0) {
-        //     char tmp = sb.charAt(0);
-        //     sb.deleteCharAt(0);
-        //     sb.append(tmp);
+        // char tmp = sb.charAt(0);
+        // sb.deleteCharAt(0);
+        // sb.append(tmp);
 
-        //     if (sb.toString().equals(goal)) {
-        //         return true;
-        //     }
-        //     len--;
+        // if (sb.toString().equals(goal)) {
+        // return true;
+        // }
+        // len--;
         // }
         // return false;
     }
