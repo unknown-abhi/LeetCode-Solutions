@@ -1,8 +1,8 @@
 class Solution {
     public boolean rotateString(String s, String goal) {
-        if (s.length() != goal.length()) {
-            return false;
-        }
+        // if (s.length() != goal.length()) {
+        //     return false;
+        // }
 
         Queue<Character> q1 = new LinkedList<>();
         Queue<Character> q2 = new LinkedList<>();
