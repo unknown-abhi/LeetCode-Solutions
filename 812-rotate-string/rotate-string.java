@@ -1,21 +1,32 @@
 class Solution {
     public boolean rotateString(String s, String goal) {
-        // if (s.length() != goal.length()) {
-        //     return false;
-        // }
+        if (s.length() != goal.length()) {
+            return false;
+        }
 
-        StringBuilder sb = new StringBuilder(s);
+        Queue<Character> q1 = new LinkedList<>();
+        Queue<Character> q2 = new LinkedList<>();
 
-        for (int i = 0; i < s.length(); i++) {
-            char firstChar = sb.charAt(0);
-            for (int j = 1; j < s.length(); j++) {
-                sb.setCharAt(j - 1, sb.charAt(j));
-            }
-            sb.setCharAt(s.length() - 1, firstChar);
-            if (sb.toString().equals(goal)) {
+        for (char c : s.toCharArray()) {
+            q1.add(c);
+        }
+        for (char c : goal.toCharArray()) {
+            q2.add(c);
+        }
+
+        int len = q1.size();
+
+        while (len > 0) {
+            char tmp = q1.peek();
+            q1.poll();
+            q1.add(tmp);
+
+            if (q1.equals(q2)) {
                 return true;
             }
+            len--;
         }
+
         return false;
     }
 }
