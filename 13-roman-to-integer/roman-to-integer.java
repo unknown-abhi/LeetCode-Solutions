@@ -9,11 +9,12 @@ class Solution {
                 'D', 500,
                 'M', 1000);
 
+        int n = s.length();
         int result = 0;
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < n; i++) {
             char current = s.charAt(i);
             int currentValue = romanValues.get(current);
-            if (i + 1 < s.length() && romanValues.containsKey(s.charAt(i + 1))) {
+            if (i + 1 < n && romanValues.containsKey(s.charAt(i + 1))) {
                 int nextValue = romanValues.get(s.charAt(i + 1));
                 if (currentValue >= nextValue) {
                     result += currentValue;
