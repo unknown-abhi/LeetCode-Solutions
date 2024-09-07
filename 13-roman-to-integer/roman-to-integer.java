@@ -21,7 +21,7 @@ class Solution {
                     result += nextValue - currentValue;
                     i++;
                 }
-            } else if (i == s.length() - 1) {
+            } else {
                 result += currentValue;
             }
         }
