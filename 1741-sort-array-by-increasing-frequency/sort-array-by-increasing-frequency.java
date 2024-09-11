@@ -7,6 +7,7 @@ class Solution {
         for (int i = nums.length - 1; i >= 0; i--) {
             frequencyMap.put(nums[i], frequencyMap.getOrDefault(nums[i], 0) + 1);
         }
+        
         List<Integer> list = new ArrayList<>(frequencyMap.keySet());
         list.sort((l1, l2) -> frequencyMap.get(l1).compareTo(frequencyMap.get(l2)));
 
