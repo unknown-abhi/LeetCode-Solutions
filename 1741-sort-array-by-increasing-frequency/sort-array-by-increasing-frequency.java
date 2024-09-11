@@ -3,10 +3,9 @@ class Solution {
         Map<Integer, Integer> frequencyMap = new LinkedHashMap<>();
 
         Arrays.sort(nums);
-        int[] reverseNums = IntStream.rangeClosed(1, nums.length).map(i -> nums[nums.length - i]).toArray();
 
-        for (int i : reverseNums) {
-            frequencyMap.put(i, frequencyMap.getOrDefault(i, 0) + 1);
+        for (int i = nums.length - 1; i >= 0; i--) {
+            frequencyMap.put(nums[i], frequencyMap.getOrDefault(nums[i], 0) + 1);
         }
         List<Integer> list = new ArrayList<>(frequencyMap.keySet());
         list.sort((l1, l2) -> frequencyMap.get(l1).compareTo(frequencyMap.get(l2)));
@@ -15,12 +14,12 @@ class Solution {
         for (int i : list) {
             int j = 0;
             while (j < frequencyMap.get(i)) {
-                reverseNums[indx] = i;
+                nums[indx] = i;
                 indx++;
                 j++;
             }
         }
 
-        return reverseNums;
+        return nums;
     }
 }
