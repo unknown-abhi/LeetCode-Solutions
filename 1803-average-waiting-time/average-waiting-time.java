@@ -5,15 +5,16 @@ class Solution {
         double idealTime = 1;
         double totalWaitTime = 0;
 
-        for (int i = 0; i < totalCust; i++) {
+        for (int customer[] : customers) {
 
-            if (idealTime <= customers[i][0]) {
-                idealTime = customers[i][0] + customers[i][1];
-            } else {
-                idealTime = idealTime + customers[i][1];
+            // Chef Free
+            if (idealTime <= customer[0]) {
+                idealTime = customer[0] + customer[1];
+            } else { // Chef Not Free
+                idealTime = idealTime + customer[1];
             }
 
-            totalWaitTime += idealTime - customers[i][0];
+            totalWaitTime += idealTime - customer[0];
         }
 
         return totalWaitTime / totalCust;
