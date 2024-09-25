@@ -1,8 +1,11 @@
 class Solution {
     public int jump(int[] nums) {
-        if (nums[0] == 0 && nums.length > 1) {
+        int arrSize = nums.length;
+
+        if (nums[0] == 0 && arrSize > 1) {
             return -1;
-        }if(nums.length == 1){
+        }
+        if (arrSize == 1) {
             return 0;
         }
 
@@ -10,13 +13,14 @@ class Solution {
         int maxJump = 0;
         int minimumJump = 0;
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < arrSize; i++) {
+
             maxJump = Math.max(maxJump, nums[i] + i);
 
             if (maxReach == i) {
                 maxReach = maxJump;
                 minimumJump++;
-                if (maxReach >= nums.length - 1) {
+                if (maxReach >= arrSize - 1) {
                     return minimumJump;
                 }
             }
