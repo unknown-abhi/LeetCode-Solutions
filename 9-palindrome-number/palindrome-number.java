@@ -12,6 +12,6 @@ class Solution {
             x /= 10;
         }
 
-        return originalNumber == reversedNumber ? true : false;
+        return originalNumber == reversedNumber;
     }
 }
