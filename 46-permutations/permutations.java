@@ -28,8 +28,7 @@ class Solution {
 
     public List<List<Integer>> permute(int[] nums) {
         Set<List<Integer>> result = new HashSet<>(); // Using TreeSet to store sorted unique permutations
-        List<Integer> ans = new ArrayList<>();
-        permutation(nums, ans, result);
+        permutation(nums, new ArrayList<>(), result);
         return new ArrayList<>(result); // Converting Set to List
     }
 }
