@@ -28,7 +28,7 @@ class Solution {
         // flag.next = null;
         // } else {
         flag.next = slow.next;
-        slow.next = null;
+        // slow.next = null;
         // }
 
         return head;
