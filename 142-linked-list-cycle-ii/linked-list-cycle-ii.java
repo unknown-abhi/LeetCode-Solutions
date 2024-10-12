@@ -19,7 +19,7 @@ public class Solution {
         ListNode mover = head;
         Map<ListNode, Integer> mp = new HashMap<>();
 
-        while (mover != null && mover.next != null) {
+        while (mover != null) {
 
             if (mp.getOrDefault(mover, 0) == 1) {
                 return mover;
