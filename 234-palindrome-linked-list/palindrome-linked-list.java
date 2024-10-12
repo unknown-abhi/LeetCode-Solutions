@@ -24,7 +24,7 @@ class Solution {
         return newHead;
     }
     public boolean isPalindrome(ListNode head) {
-        if(head.next == null){
+        if(head == null || head.next == null){
             return true;
         }
 
