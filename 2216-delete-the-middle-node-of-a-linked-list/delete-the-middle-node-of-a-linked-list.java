@@ -18,15 +18,10 @@ class Solution {
         ListNode fast = head;
         ListNode flag = head;
 
-        int count = 0;
-
         while (fast != null && fast.next != null) {
-            if (count >= 1) {
-                flag = flag.next;
-            }
+            flag = slow;
             slow = slow.next;
             fast = fast.next.next;
-            count++;
         }
 
         if (slow.next == null) {
