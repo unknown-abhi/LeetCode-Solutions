@@ -21,6 +21,7 @@ class Solution {
             fast = fast.next;
         }
 
+        // Edge Case :: If we have to remove the head
         if(fast == null){
             return head.next;
         }
