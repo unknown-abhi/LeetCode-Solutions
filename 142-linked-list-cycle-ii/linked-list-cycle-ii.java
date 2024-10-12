@@ -16,17 +16,21 @@ public class Solution {
             return null;
         }
 
-        ListNode mover = head;
-        Map<ListNode, Integer> mp = new HashMap<>();
+        ListNode slow = head;
+        ListNode fast = head;
 
-        while (mover != null) {
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
 
-            if (mp.getOrDefault(mover, 0) == 1) {
-                return mover;
+            if (fast == slow) {
+                slow = head;
+                while(slow != fast){
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
             }
-
-            mp.put(mover, 1);
-            mover = mover.next;
         }
 
         return null;
