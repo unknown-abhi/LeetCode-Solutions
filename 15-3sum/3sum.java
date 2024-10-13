@@ -1,6 +1,6 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        Set<List<Integer>> st = new HashSet<>();
+        List<List<Integer>> st = new ArrayList<>();
 
         Arrays.sort(nums);
 
@@ -14,16 +14,16 @@ class Solution {
 
             while (j < k) {
                 if (nums[i] + nums[j] + nums[k] == 0) {
-                    List<Integer> list = new ArrayList<>();
-                    list.add(nums[i]);
-                    list.add(nums[j]);
-                    list.add(nums[k]);
+                    List<Integer> list = Arrays.asList(nums[i],nums[j],nums[k]);
+                    // list.add(nums[i]);
+                    // list.add(nums[j]);
+                    // list.add(nums[k]);
                     st.add(list);
                     j++;
                     k--;
                     while (j < k && nums[j] == nums[j-1]) j++;
                     while (j < k && nums[k] == nums[k+1]) k--;
-                    
+
                 } else if (nums[i] + nums[j] + nums[k] < 0) {
                     j++;
                 } else {
@@ -31,7 +31,7 @@ class Solution {
                 }
             }
         }
-        List<List<Integer>> ans = new ArrayList<>(st);
-        return ans;
+        // List<List<Integer>> ans = new ArrayList<>(st);
+        return st;
     }
 }
