@@ -12,23 +12,31 @@
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
+        if (headA == null || headB == null) {
+            return null;
+        }
+
         ListNode tmpA = headA;
         ListNode tmpB = headB;
-        HashMap<ListNode, Integer> freqMap = new HashMap<>();
 
-        while (tmpA != null) {
-            freqMap.put(tmpA, 1);
+        while (tmpA != tmpB) {
+
             tmpA = tmpA.next;
-        }
+            tmpB = tmpB.next;
 
-        while (tmpB != null) {
-            if(freqMap.getOrDefault(tmpB, 0) == 1){
-                return tmpB;
+            if (tmpA == tmpB) {
+                return tmpA;
             }
 
-            tmpB = tmpB.next;
+            if (tmpA == null) {
+                tmpA = headB;
+            }
+
+            if (tmpB == null) {
+                tmpB = headA;
+            }
         }
 
-        return null;
+        return tmpA;
     }
 }
