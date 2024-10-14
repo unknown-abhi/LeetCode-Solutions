@@ -17,14 +17,12 @@ public class Solution {
         HashMap<ListNode, Integer> freqMap = new HashMap<>();
 
         while (tmpA != null) {
-            freqMap.put(tmpA, freqMap.getOrDefault(tmpA, 0) + 1);
+            freqMap.put(tmpA, 1);
             tmpA = tmpA.next;
         }
 
         while (tmpB != null) {
-            freqMap.put(tmpB, freqMap.getOrDefault(tmpB, 0) + 1);
-
-            if(freqMap.get(tmpB) == 2){
+            if(freqMap.getOrDefault(tmpB, 0) == 1){
                 return tmpB;
             }
 
