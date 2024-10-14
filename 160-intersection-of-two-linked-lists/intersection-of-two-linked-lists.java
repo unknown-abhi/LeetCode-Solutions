@@ -14,16 +14,21 @@ public class Solution {
 
         ListNode tmpA = headA;
         ListNode tmpB = headB;
+        HashMap<ListNode, Integer> freqMap = new HashMap<>();
 
-        while (tmpA != null && tmpB != null) {
-            while (tmpB != null) {
-                if (tmpA == tmpB) {
-                    return tmpA;
-                }
-                tmpB = tmpB.next;
-            }
+        while (tmpA != null) {
+            freqMap.put(tmpA, freqMap.getOrDefault(tmpA, 0) + 1);
             tmpA = tmpA.next;
-            tmpB = headB;
+        }
+
+        while (tmpB != null) {
+            freqMap.put(tmpB, freqMap.getOrDefault(tmpB, 0) + 1);
+
+            if(freqMap.get(tmpB) == 2){
+                return tmpB;
+            }
+
+            tmpB = tmpB.next;
         }
 
         return null;
