@@ -5,6 +5,12 @@ class Solution {
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length; i++) {
+            // If the current value is greater than 0, break early as no valid triplet can
+            // be found
+            if (nums[i] > 0)
+                break;
+
+            // Skip duplicates
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
