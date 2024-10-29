@@ -3,10 +3,10 @@ class Solution {
     private long MOD = 1000000007;
 
     public int countGoodNumbers(long n) {
-        long even = (n + 1) / 2;
-        long odd = n / 2;
+        long evenIdx = (n + 1) / 2;
+        long oddIdx = n / 2;
 
-        int ans = (int) ((pow(5, even) * pow(4, odd)) % MOD);
+        int ans = (int) ((pow(5, evenIdx) * pow(4, oddIdx)) % MOD);
 
         return ans;
     }
