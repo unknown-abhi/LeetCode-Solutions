@@ -1,11 +1,19 @@
 class Solution {
     public boolean checkPerfectNumber(int num) {
-        int sum = 0;
-        int div = 1;
+        if (num == 1) {
+            return false;
+        }
 
-        while (div <= num/2) {
+        int sum = 1;
+        int div = 2;
+
+        while (div <= Math.sqrt(num)) {
             if (num % div == 0) {
                 sum += div;
+
+                if (div != num / div) {
+                    sum += num / div;
+                }
             }
             div++;
         }
