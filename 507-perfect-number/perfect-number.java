@@ -3,7 +3,7 @@ class Solution {
         int sum = 0;
         int div = 1;
 
-        while (div < num) {
+        while (div <= num/2) {
             if (num % div == 0) {
                 sum += div;
             }
