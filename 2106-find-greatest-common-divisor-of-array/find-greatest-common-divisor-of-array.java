@@ -4,15 +4,11 @@ class Solution {
         int min = Arrays.stream(nums).min().getAsInt();
         int max = Arrays.stream(nums).max().getAsInt();
 
-        int start = min;
-
-        while (start > 0) {
-            if (min % start == 0 && max % start == 0) {
-                return start;
-            }
-            start--;
+        while (max != 0) {
+            int temp = max;
+            max = min % max;
+            min = temp;
         }
-
-        return -1;
+        return min;
     }
 }
