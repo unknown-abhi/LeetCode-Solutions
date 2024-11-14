@@ -7,16 +7,21 @@ class Solution {
         int count = 0;
         int size = nums.length;
 
+        if (nums[0] < nums[size - 1]) {
+            count++;
+        }
+
         for (int i = 0; i < size - 1; i++) {
             if (nums[i] > nums[i + 1]) {
                 count++;
             }
+
+            if(count > 1){
+                return false;
+            }
         }
 
-        if (nums[0] < nums[size - 1]) {
-            count++;
-        }
-        
-        return count <= 1;
+
+        return true;
     }
 }
