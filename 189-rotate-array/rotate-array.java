@@ -9,9 +9,8 @@ class Solution {
     }
 
     private static void reverse(int[] nums, int i, int j) {
-        int temp;
         while (i < j) {
-            temp = nums[i];
+            int temp = nums[i];
             nums[i] = nums[j];
             nums[j] = temp;
             i++;
