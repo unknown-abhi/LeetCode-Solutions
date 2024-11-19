@@ -1,12 +1,25 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
-        
-        char[] a = s.toCharArray();
-        char[] b = t.toCharArray();
+        int[] count = new int[26];
 
-        Arrays.sort(a);
-        Arrays.sort(b);
+        // Count occurrence of each character in first string
+        for (char c : s.toCharArray()) {
+            count[c - 'a']++;
+        }
 
-        return Arrays.equals(a, b);
+        // Decrement the count for each character in the second string
+        for (char c : t.toCharArray()) {
+            count[c - 'a']--;
+        }
+
+        // Check for count of every character
+        for (int i : count) {
+            // If the count is not zero
+            if (i != 0)
+                return false; // Return false
+        }
+
+        // Otherwise strings are anagram
+        return true;
     }
 }
